@@ -1,0 +1,40 @@
+/* Editor styles */
+.editor-container {
+  @apply h-full overflow-hidden bg-gray-900;
+}
+
+.editor-tabs {
+  @apply border-b dark:border-gray-700 p-2 flex items-center gap-2;
+}
+
+.editor-tab {
+  @apply p-2 rounded-lg flex items-center gap-2 transition-colors;
+}
+
+.editor-tab-active {
+  @apply bg-[var(--primary)]/10 text-[var(--primary)];
+}
+
+.editor-tab-inactive {
+  @apply hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+
+.preview-container {
+  @apply h-full flex flex-col bg-gray-900;
+}
+
+.preview-frame {
+  @apply flex-1 overflow-hidden rounded-lg bg-gray-800;
+}
+
+.preview-console {
+  @apply h-32 mt-4 rounded-lg bg-gray-800 p-4 overflow-auto;
+}
+
+.preview-output {
+  @apply text-sm font-mono text-gray-300 whitespace-pre-wrap;
+}
+
+.preview-error {
+  @apply text-[var(--error)];
+}

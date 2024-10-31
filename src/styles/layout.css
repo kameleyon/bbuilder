@@ -1,0 +1,24 @@
+/* Layout styles */
+.layout-container {
+  @apply min-h-screen bg-[var(--background)] text-[var(--text)] dark:bg-[var(--background-dark)] dark:text-[var(--text-dark)];
+}
+
+.header {
+  @apply fixed top-0 z-50 w-full bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700;
+}
+
+.header-content {
+  @apply px-4 h-16 flex items-center justify-between;
+}
+
+.main-content {
+  @apply flex h-screen pt-16;
+}
+
+.sidebar {
+  @apply w-16 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col items-center py-4;
+}
+
+.content-area {
+  @apply flex-1;
+}

@@ -1,0 +1,52 @@
+/* Chat styles */
+.chat-container {
+  @apply flex-1 overflow-y-auto p-4 space-y-6;
+}
+
+.message {
+  @apply flex items-start gap-4;
+}
+
+.message-user {
+  @apply justify-end;
+}
+
+.message-assistant {
+  @apply justify-start;
+}
+
+.message-avatar {
+  @apply w-10 h-10 rounded-full flex items-center justify-center text-white flex-shrink-0;
+}
+
+.message-avatar-user {
+  @apply bg-gradient-to-br from-[var(--secondary)] to-[var(--secondary-hover)];
+}
+
+.message-avatar-assistant {
+  @apply bg-gradient-to-br from-[var(--primary)] to-[var(--primary-hover)];
+}
+
+.message-content {
+  @apply max-w-[calc(100%-5rem)] rounded-2xl p-4;
+}
+
+.message-content-user {
+  @apply bg-gradient-to-br from-[var(--primary)] to-[var(--primary-hover)] text-white;
+}
+
+.message-content-assistant {
+  @apply bg-white dark:bg-gray-800;
+}
+
+.chat-input-container {
+  @apply p-4 bg-white dark:bg-gray-800 border-t dark:border-gray-700;
+}
+
+.loading-indicator {
+  @apply flex gap-2;
+}
+
+.loading-dot {
+  @apply w-2.5 h-2.5 rounded-full bg-[var(--primary)];
+}

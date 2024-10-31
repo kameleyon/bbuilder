@@ -1,0 +1,26 @@
+/* Component styles */
+.btn {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white;
+}
+
+.btn-secondary {
+  @apply bg-[var(--secondary)] hover:bg-[var(--secondary-hover)] text-white;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+         bg-white dark:bg-gray-800 focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent
+         transition-colors;
+}
+
+.icon-button {
+  @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent;
+}
