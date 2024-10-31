@@ -1,7 +1,7 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "buddybuilder",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,15 +12,25 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.0.0",
     "@codemirror/lang-javascript": "^6.2.1",
+    "@codemirror/lang-css": "^6.2.1",
+    "@codemirror/lang-html": "^6.2.1",
+    "@codemirror/language": "^6.9.3",
     "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.22.3",
     "@uiw/react-codemirror": "^4.21.21",
+    "@webcontainer/api": "^1.1.8",
     "dompurify": "^3.0.9",
     "highlight.js": "^11.9.0",
     "lucide-react": "^0.344.0",
     "marked": "^12.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "sass": "^1.71.1",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0",
+    "xterm-addon-web-links": "^0.9.0",
+    "zustand": "^4.5.1"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
@@ -30,6 +40,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
+    "sass": "^1.71.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.2"

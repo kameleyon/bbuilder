@@ -1,10 +1,13 @@
+import React from 'react';
 import { ThemeProvider } from './components/ThemeProvider';
-import { AppRoutes } from './components/AppRoutes';
+import Workbench from './components/workbench/Workbench';
 
 function App() {
   return (
     <ThemeProvider>
-      <AppRoutes />
+      <div className="h-screen flex flex-col">
+        <Workbench />
+      </div>
     </ThemeProvider>
   );
 }

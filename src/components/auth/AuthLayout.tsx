@@ -1,15 +1,27 @@
-import { ReactNode } from 'react';
+import React from 'react';
+import { Outlet, Navigate } from 'react-router-dom';
+import { useAuth } from '@clerk/clerk-react';
 
-interface AuthLayoutProps {
-  children: ReactNode;
-}
+const AuthLayout: React.FC = () => {
+  const { isSignedIn } = useAuth();
 
-export function AuthLayout({ children }: AuthLayoutProps) {
+  if (isSignedIn) {
+    return <Navigate to="/workspace" replace />;
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        {children}
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="max-w-md w-full space-y-8 p-8 bg-gray-800 rounded-lg shadow-lg">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white">BuddyBuilder</h2>
+          <p className="mt-2 text-sm text-gray-400">
+            AI-Powered Development Environment
+          </p>
+        </div>
+        <Outlet />
       </div>
     </div>
   );
-}
+};
+
+export default AuthLayout;

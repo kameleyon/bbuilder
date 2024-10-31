@@ -2,27 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 17, 24, 39;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Prose styles for markdown content */
+.prose-invert {
+  --tw-prose-body: theme('colors.gray.300');
+  --tw-prose-headings: theme('colors.white');
+  --tw-prose-links: theme('colors.blue.400');
+  --tw-prose-links-hover: theme('colors.blue.300');
+  --tw-prose-code: theme('colors.white');
+  --tw-prose-pre-bg: theme('colors.gray.800');
+}
+
+.prose pre {
+  background-color: theme('colors.gray.800');
+  border-radius: theme('borderRadius.lg');
+  padding: theme('spacing.4');
+  margin: theme('spacing.4') 0;
+}
+
+.prose code {
+  background-color: theme('colors.gray.800');
+  padding: theme('spacing.1') theme('spacing.2');
+  border-radius: theme('borderRadius.md');
+  font-size: 0.875em;
+}
+
+/* Code highlighting styles */
+.hljs {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Terminal styles */
+.xterm {
+  padding: 8px;
+  height: 100%;
+}
+
+.xterm-viewport {
+  overflow-y: auto !important;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 85, 99);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128);
+}
+
+/* Split pane styles */
+.gutter {
+  background-color: rgb(31, 41, 55);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter:hover {
+  background-color: rgb(55, 65, 81);
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+  width: 4px;
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+  height: 4px;
+}
+
+/* Loading animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
-@layer components {
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500;
-  }
+.animate-bounce {
+  animation: bounce 0.5s infinite;
+}
 
-  .input-field {
-    @apply px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 
-    bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
-    focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent
-    transition-colors;
-  }
+/* File tree styles */
+.file-tree-item:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+}
 
-  .btn-primary {
-    @apply px-4 py-2 rounded-lg bg-teal-500 text-white
-    hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2
-    disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
-  }
+.file-tree-item.active {
+  background-color: rgb(55, 65, 81);
+}
+
+/* Chat interface styles */
+.chat-message pre {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  background-color: rgb(31, 41, 55);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.chat-message code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
 }
